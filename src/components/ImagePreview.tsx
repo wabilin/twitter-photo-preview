@@ -42,13 +42,13 @@ const ImagePreview: Component = () => {
 const CloseButton : Component<{onClick: () => void}> = (props) => {
   return (
     <button
-    class='bg-black bg-opacity-60 w-5 h-5 rounded-full leading-none relative'
-    onClick={() => { props.onClick?.() }}
-  >
-    <span class='absolute top-0 left-0 w-full h-full flex justify-center text-sm text-white items-center'>
-      ×
-    </span>
-  </button>
+      class='bg-black opacity-50 w-5 h-5 rounded-full leading-none relative'
+      onClick={() => { props.onClick?.() }}
+    >
+      <span class='absolute top-0 left-0 w-full h-full flex justify-center text-sm text-white items-center'>
+        ×
+      </span>
+    </button>
   )
 }
 
