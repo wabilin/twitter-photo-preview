@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js';
 import ImageUploader from './components/ImageUploader';
 import ImagePreview from './components/ImagePreview';
+import GhLogoUrl from './assets/github-mark-white.svg';
 
 const App: Component = () => {
   return (
@@ -17,7 +18,7 @@ const App: Component = () => {
           class='text-zinc-300 flex items-center gap-1 text-sm'
           href='https://github.com/wabilin/twitter-photo-preview'
         >
-          <img src='/src/assets/github-mark-white.svg' alt='GitHub' class='w-4 h-4' />
+          <img src={GhLogoUrl} alt='GitHub' class='w-4 h-4' />
           GitHub
         </a>
       </footer>
