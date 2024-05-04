@@ -2,7 +2,7 @@ import { For, type Component } from 'solid-js';
 import {imagesStore} from '../stores/images'
 
 const ImagePreview: Component = () => {
-  const [images] = imagesStore;
+  const [images, setImages] = imagesStore;
   const groups: () => string[][] = () => {
     if (images.length === 0) return [];
     if (images.length === 1) return [[images[0]]];
@@ -22,8 +22,13 @@ const ImagePreview: Component = () => {
           <div class='w-full h-full flex flex-col gap-px'>
             <For each={group}>
               {(image) => (
-                <div class='w-full h-full shrink overflow-hidden'>
+                <div class='w-full h-full shrink overflow-hidden relative'>
                   <img class='w-full h-full object-cover' src={image} />
+                  <div class='absolute top-0 right-0 p-1.5 flex'>
+                    <CloseButton onClick={() => {
+                      setImages((images) => images.filter((i) => i !== image));
+                    }} />
+                  </div>
                 </div>
               )}
             </For>
@@ -33,5 +38,18 @@ const ImagePreview: Component = () => {
     </div>
   );
 };
+
+const CloseButton : Component<{onClick: () => void}> = (props) => {
+  return (
+    <button
+    class='bg-black bg-opacity-60 w-5 h-5 rounded-full leading-none relative'
+    onClick={() => { props.onClick?.() }}
+  >
+    <span class='absolute top-0 left-0 w-full h-full flex justify-center text-sm text-white items-center'>
+      ×
+    </span>
+  </button>
+  )
+}
 
 export default ImagePreview;
