@@ -22,6 +22,7 @@ const ImageUploader: Component = () => {
         type='file'
         multiple
         accept='image/*'
+        aria-label='Upload images'
         onchange={handleChange}
       />
       <button
