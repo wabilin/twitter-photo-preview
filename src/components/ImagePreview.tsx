@@ -13,7 +13,7 @@ const ImagePreview: Component = () => {
 
   return (
     <div
-      class='w-[516px] h-[290px] rounded-2xl bg-black
+      class='w-[516px] h-[290px] xl:w-[1032px] xl:h-[580px] rounded-2xl bg-black
         border border-solid border-black
         flex overflow-hidden gap-px'
     >

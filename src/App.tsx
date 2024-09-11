@@ -18,7 +18,7 @@ const App: Component = () => {
           class='text-zinc-300 flex items-center gap-1 text-sm'
           href='https://github.com/wabilin/twitter-photo-preview'
         >
-          <img src={GhLogoUrl} alt='GitHub' class='w-4 h-4' />
+          <img src={GhLogoUrl} alt="" class='w-4 h-4' />
           GitHub
         </a>
       </footer>
